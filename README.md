@@ -11,4 +11,5 @@ has been defined in the case structure here-under, and invoking the script under
 itself is tested, not the path to it.
 
 Example:
-$ parallel.sh ffmpeg {} -c:a libmp3lame -vbr:a 2 /tmp/{} -- *.mp3
+
+    $ parallel.sh ffmpeg {} -c:a libmp3lame -vbr:a 2 /tmp/{} -- *.mp3
