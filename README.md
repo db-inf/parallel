@@ -1,6 +1,6 @@
 parallel.sh
 ===========
-parallel.sh is a meta-script to run a command in parallel on a possible large set of
+parallel.sh is a meta-script to run a command in parallel on a possibly large set of
 arguments/filenames, with concurrency limited by the number of processors. When multiple instances
 of parallel.sh itself are started, they execute one after the other, not in parallel.
 
@@ -17,16 +17,16 @@ Usage:
 	linkingname.sh [ [ -e | --expansion ] expansionformat ] arguments...
 
 	arguments : the given or predefined command is run once for each argument (often a filename)
-	command : the executable and it's options that will handle each argument in turn. Use one or more
+	command : the executable and its options that will handle each argument in turn. Use one or more
 		"{}" options as placeholders; they will each be replaced by the argument. Each "{}" can be
 		prefixed and suffixed by fixed strings such as paths and filename extensions.
 	-e expansionformat
 	--expansion expansionformat : without this option, the arguments are collected and expanded with
 		the bash parameter expansion syntax "${@}"; with this option, the expansionformat is inserted
 		before the closing '}'. For example, -e %.jpg would lead to the expansion of "${@%.jpg}", for
-		which batch removes the ".jpg" suffix of each of the arguments. BEWARE: the expansion formats
+		which bash removes the ".jpg" suffix of each of the arguments. BEWARE: the expansion formats
 		:offset and :offset:length do NOT expand to a substring of each of the arguments; instead they
-		expand only a subarray of the arguments.
+		expand to only a subarray of the arguments.
 
 	- When invoked under it's own name 'parallel.sh', the arguments up to but not including "--" define
 	 the command to execute, wherein one or more occurences of an argument "{}", serving as placeholder,
