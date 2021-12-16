@@ -11,7 +11,7 @@ swapping its working memory in to an out of RAM each time. This script limits th
 concurrent jpegtran processes to the number of processors.
 
 Usage:
-
+-----
 	parallel.sh [ -h | --help ]
 	parallel.sh [ [ -e | --expansion ] expansionformat ] command... -- arguments...
 	linkingname.sh [ [ -e | --expansion ] expansionformat ] arguments...
@@ -37,8 +37,14 @@ Usage:
 	 invoking the script under that linkingname. Only the filename itself of the link is tested,
 	 not the path to it.
 
-Examples:
+Required:
+--------
+- bash
+- flock
+- xargs
 
+Examples:
+--------
 - recompress a set of mp3 files to another directory :
 
 	`$ parallel.sh ffmpeg {} -c:a libmp3lame -vbr:a 2 /tmp/{} -- *.mp3`
